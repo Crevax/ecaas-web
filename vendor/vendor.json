@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "UfMLDdVMWvsHYz3uZx3nTltrM6I=",
+			"path": "github.com/shopspring/decimal",
+			"revision": "9ca7f51822d222ae4e246f070f9aad863599bd1a",
+			"revisionTime": "2017-11-08T22:52:54Z"
+		},
+		{
+			"checksumSHA1": "TMJClQJofYaJ71+j+EX3NGvSlpU=",
+			"path": "github.com/syllabix/ecaas",
+			"revision": "d313868f55c56b5da6c28f506eeac6beccef59a9",
+			"revisionTime": "2017-12-03T21:03:08Z"
+		}
+	],
+	"rootPath": "stash.cqlcorp.net/go/demo"
+}
