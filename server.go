@@ -1,7 +1,9 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -24,9 +26,23 @@ func (self *demoMoveType) GetTaxRate() string {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	jobDetails := ecaas.NewJobDetails(4, "120.50", "Mon Dec 04 12:00:00 EST 2017")
+	body, err := ioutil.ReadAll(r.Body)
+	if err != nil {
+		log.Println(err)
+		fmt.Fprintln(w, "Error parsing response body")
+		return
+	}
+
+	var jobDetails ecaas.JobDetails
+	err = json.Unmarshal(body, &jobDetails)
+	if err != nil {
+		log.Println(err)
+		fmt.Fprintln(w, "Error parsing job details")
+		return
+	}
+
 	moveType := demoMoveType{}
-	results := ecaas.CalculateTotalCost(jobDetails, &moveType)
+	results := ecaas.CalculateTotalCost(&jobDetails, &moveType)
 	fmt.Fprintf(w, "Estimate range is %v - %v", results.Low, results.High)
 }
 
