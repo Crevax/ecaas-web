@@ -13,15 +13,15 @@ import (
 
 type demoMoveType struct{}
 
-func (self *demoMoveType) GetName() string {
+func (mt *demoMoveType) GetName() string {
 	return "Demo"
 }
 
-func (self *demoMoveType) GetMultiplier() string {
+func (mt *demoMoveType) GetMultiplier() string {
 	return "0.05"
 }
 
-func (self *demoMoveType) GetTaxRate() string {
+func (mt *demoMoveType) GetTaxRate() string {
 	return "0.06"
 }
 
