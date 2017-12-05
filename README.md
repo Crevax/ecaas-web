@@ -11,7 +11,11 @@ Once that is installed, the path for the website should contain a `web.config` f
 <configuration>
     <system.webServer>
         <handlers>
-            <add name="httpplatformhandler" path="*" verb="*" modules="httpPlatformHandler" resourceType="Unspecified" />
+            <add name="httpplatformhandler"
+                 path="*"
+                 verb="*"
+                 modules="httpPlatformHandler"
+                 resourceType="Unspecified" />
         </handlers>
         <httpPlatform processPath=".\app\ecaas-web.exe"
                       arguments=""
